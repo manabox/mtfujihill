@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>富士ヒル決意表明 画像生成</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>富士ヒル決意表明</h1>
+    <div class="controls">
+      <div>
+        <label>
+          スタート：
+          <select id="select-wave">
+            <option>第1ウェーブ</option>
+            <option>第2ウェーブ</option>
+            <option>第3ウェーブ</option>
+            <option>第4ウェーブ</option>
+            <option>第5ウェーブ</option>
+            <option>第6ウェーブ</option>
+            <option>第7ウェーブ</option>
+          </select>
+        </label>
+      </div>
+
+      <div>
+        <label>
+          目標：
+          <select id="select-goal">
+            <option>完走</option>
+            <option>ブロンズリング</option>
+            <option>シルバーリング</option>
+            <option>ゴールドリング</option>
+            <option>プラチナリング</option>
+          </select>
+        </label>
+      </div>
+
+      <button id="generate">画像を作る</button>
+    </div>
+
+    <div id="result"></div>
+
+    <canvas id="canvas" style="display:none;"></canvas>
+  </div>
+  <footer>
+    <p><a href="https://fujihc.jp/">Mt.富士ヒルクライム</a>に参加するすべての方へ！怪我のないようがんばろう！</p>
+    <p class="copy">&copy; 2025 <a href="https://www.webcreatorbox.com/">Webクリエイターボックス</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
