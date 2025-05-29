@@ -92,8 +92,8 @@ async function generateImage() {
 
         // テキスト2
         ctx.font = `${fontWeight} 110px ${baseFont}`;
-        ctx.fillStyle = '#000000';
-        ctx.fillText(`${goalText}`, centerX, centerY);
+        ctx.fillStyle = '#000066';
+        ctx.fillText(`${goalText}`, centerX, centerY - 5);
 
         // テキスト3
         ctx.font = `${fontWeight} 90px ${baseFont}`;
@@ -101,9 +101,22 @@ async function generateImage() {
         ctx.fillText(`目指して頑張ります！`, centerX, centerY + 200);
 
         const dataURL = canvas.toDataURL('image/png');
+
+        // X投稿用のテキストとURLを準備
+        const tweetText = `富士ヒルに参加します！${waveText}スタートです！${goalText}目指して頑張ります！`;
+        const tweetUrl = "https://manabox.github.io/mtfujihill/";
+        const hashtags = "富士ヒル,Mt富士ヒルクライム";
+
+        // Web Intent URL を作成
+        const twitterIntentUrl = `https://x.com/intent/post?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(tweetUrl)}&hashtags=${encodeURIComponent(hashtags)}`;
+
         resultArea.innerHTML = `
           <p>画像の生成完了！画像を長押しか右クリックで保存してください。</p>
           <img src="${dataURL}" alt="生成された画像">
+          <a href="${twitterIntentUrl}" class="btn-x" target="_blank" rel="noopener noreferrer">
+            Xに投稿する
+          </a>
+          <p class="small-text">※ Xに投稿するボタンを押した後、<br>保存した画像を投稿画面で添付してください。</p>
         `;
     };
 
